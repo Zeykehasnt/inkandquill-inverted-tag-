@@ -12,7 +12,7 @@ import net.minecraft.world.item.Item;
 public class ModTags {
     public static class Items {
 
-        public static final TagKey<Item> INK_AND_QUILL_RENAMEABLE = tag("ink_and_quill_renameable");
+        public static final TagKey<Item> INK_AND_QUILL_BLACKLIST = tag("ink_and_quill_blacklist");
 
         @SuppressWarnings("SameParameterValue")
         private static TagKey<Item> tag(String name) {
