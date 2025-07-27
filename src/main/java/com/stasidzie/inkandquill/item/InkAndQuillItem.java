@@ -45,7 +45,7 @@ public class InkAndQuillItem extends Item {
             }
             return InteractionResultHolder.fail(inkAndQuill);
         }
-        if (!otherItem.is(ModTags.Items.INK_AND_QUILL_RENAMEABLE)) {
+        if (otherItem.is(ModTags.Items.INK_AND_QUILL_BLACKLIST)) {
             return InteractionResultHolder.pass(inkAndQuill);
         }
 
@@ -58,11 +58,11 @@ public class InkAndQuillItem extends Item {
     /**
      * @param player player that suppose to hold Ink and Quill item
      * @param handWithQuill hand that suppose to hold Ink and Quill item
-     * @return true if Ink and Quill item is in given hand and if the other hand holds renameable item
+     * @return blah blah blah
      */
     public static boolean handsCheck(Player player, InteractionHand handWithQuill) {
         return player.getItemInHand(handWithQuill).is(ModItems.INK_AND_QUILL.get())
-                && player.getItemInHand(HandUtil.otherHand(handWithQuill)).is(ModTags.Items.INK_AND_QUILL_RENAMEABLE);
+                && !player.getItemInHand(HandUtil.otherHand(handWithQuill)).is(ModTags.Items.INK_AND_QUILL_BLACKLIST);
     }
 
     /**
